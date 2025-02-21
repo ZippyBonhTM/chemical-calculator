@@ -1,9 +1,10 @@
 import React from 'react';
-import { Element } from '../types/Element';
+import { ElementType } from '../types/Element';
 import { createPeriodicTable } from './createPeriodicTable';
+import Element from './Element';
 
 interface PeriodicTableProps {
-  elements: Element[]; // Recebe os elementos via props
+  elements: ElementType[]; // Recebe os elementos via props
 }
 
 const PeriodicTable: React.FC<PeriodicTableProps> = ({ elements }) => {
@@ -13,12 +14,12 @@ const PeriodicTable: React.FC<PeriodicTableProps> = ({ elements }) => {
   return (
     <div className="periodic-table border border-neutral-600 bg-transparent">
       {/* Renderiza a parte superior da tabela */}
-      <div className="top-table flex border border-neutral-600 m-2">
+      <div className="top-table border-neutral-600 m-2">
         {topTable.map((row, rowIndex) => (
           <div key={rowIndex} className="table-row">
             {row.map((element, colIndex) => (
-              <div key={colIndex} className={`table-cell border border-neutral-600 ${element ? "" : "invisible"}`}>
-                {element ? element.symbol.value : ''}
+              <div key={colIndex} className={`table-cell border border-neutral-600 w-28 h-28 ${element ? "" : "border-b border-t border-l-0 border-r-0"}`}>
+                {element ? <Element key={colIndex} { ...element } /> : ''}
               </div>
             ))}
           </div>
