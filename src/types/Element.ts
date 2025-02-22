@@ -5,15 +5,15 @@ export type ElementType = {
     atomicNumber: { value: number, link: string }; // Número Atômico
     atomicWeight: { value: number, link: string }; // Peso Atômico
     category: { value: ElementCategory, link: string}; // Categoria
-    description: { value: string, link: string }; // Descrição
     stateAtRoomTemp: { value: ElementState, link: string }; // Estado do elemento na temperatura ambiente
-    meltingPoint: { value: number, link: string }; // Ponto de fusão do elemento
-    boilingPoint: { value: number, link: string }; // Ponto de ebulição do elemento
+    meltingPoint?: { value: number, link: string }; // Ponto de fusão do elemento
+    boilingPoint?: { value: number, link: string }; // Ponto de ebulição do elemento
     electronConfiguration: { value: Array<number>, link: string }; // Configuração Eletrônica do elemento
-    uses: { value: string, link: string }; // Usos do elemento
-    history: { value: string, link: string }; // História
-    interestingFacts: { value: string, link: string }; // Fatos interessantes sobre o elemento
-    moreInfoLink: string; // Página de mais informações sobre o elemento
+    description?: { value: string, link: string }; // Descrição
+    uses?: { value: string, link: string }; // Usos do elemento
+    history?: { value: string, link: string }; // História
+    interestingFacts?: { value: string, link: string }; // Fatos interessantes sobre o elemento
+    moreInfoLink?: string; // Página de mais informações sobre o elemento
     group: number; // Grupo (colunas)
     period: number; // Período (linhas)
 };

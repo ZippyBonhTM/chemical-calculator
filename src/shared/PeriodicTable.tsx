@@ -1,4 +1,3 @@
-import React from 'react';
 import { ElementType } from '../types/Element';
 import { createPeriodicTable } from './createPeriodicTable';
 import Element from './Element';
@@ -8,17 +7,18 @@ interface PeriodicTableProps {
 }
 
 const PeriodicTable: React.FC<PeriodicTableProps> = ({ elements }) => {
+
   // Cria a tabela dividida em parte superior (7x18) e parte inferior
   const { topTable, bottomTable } = createPeriodicTable(elements);
 
   return (
-    <div className="periodic-table border border-neutral-600 bg-transparent">
+    <div className="periodic-table border border-neutral-600 bg-transparent h-min w-min">
       {/* Renderiza a parte superior da tabela */}
       <div className="top-table border-neutral-600 m-2">
         {topTable.map((row, rowIndex) => (
           <div key={rowIndex} className="table-row">
             {row.map((element, colIndex) => (
-              <div key={colIndex} className={`table-cell border border-neutral-600 w-28 h-28 ${element ? "" : "border-b border-t border-l-0 border-r-0"}`}>
+              <div key={colIndex} className='table-cell p-0.5'>
                 {element ? <Element key={colIndex} { ...element } /> : ''}
               </div>
             ))}

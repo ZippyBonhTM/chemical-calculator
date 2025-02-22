@@ -1,3 +1,4 @@
+"use client"
 import mockElements from "@/assets/mockElements";
 import PeriodicTable from "@/shared/PeriodicTable";
 
