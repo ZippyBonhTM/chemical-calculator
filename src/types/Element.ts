@@ -1,21 +1,26 @@
 // Padronização dos Elementos
 export type ElementType = {
-    name: { value: string, link: string }; // Nome
-    symbol: { value: string, link: string }; // Simbolo
-    atomicNumber: { value: number, link: string }; // Número Atômico
-    atomicWeight: { value: number, link: string }; // Peso Atômico
+    name: ValueWithLink<string>; // Nome
+    symbol: ValueWithLink<string>; // Simbolo
+    atomicNumber: ValueWithLink<number>; // Número Atômico
+    atomicWeight: ValueWithLink<number>; // Peso Atômico
     category: { value: ElementCategory, link: string}; // Categoria
     stateAtRoomTemp: { value: ElementState, link: string }; // Estado do elemento na temperatura ambiente
-    meltingPoint?: { value: number, link: string }; // Ponto de fusão do elemento
-    boilingPoint?: { value: number, link: string }; // Ponto de ebulição do elemento
-    electronConfiguration: { value: Array<number>, link: string }; // Configuração Eletrônica do elemento
-    description?: { value: string, link: string }; // Descrição
-    uses?: { value: string, link: string }; // Usos do elemento
-    history?: { value: string, link: string }; // História
-    interestingFacts?: { value: string, link: string }; // Fatos interessantes sobre o elemento
+    meltingPoint?: ValueWithLink<number>; // Ponto de fusão do elemento
+    boilingPoint?: ValueWithLink<number>; // Ponto de ebulição do elemento
+    electronConfiguration: ValueWithLink<Array<number>>; // Configuração Eletrônica do elemento
+    description?: ValueWithLink<string>; // Descrição
+    uses?: ValueWithLink<string>; // Usos do elemento
+    history?: ValueWithLink<string>; // História
+    interestingFacts?: ValueWithLink<string>; // Fatos interessantes sobre o elemento
     moreInfoLink?: string; // Página de mais informações sobre o elemento
     group: number; // Grupo (colunas)
     period: number; // Período (linhas)
+};
+
+export type ValueWithLink<T> = {
+    value: T,
+    link: string
 };
 
 export enum ElementCategory {

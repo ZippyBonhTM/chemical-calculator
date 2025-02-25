@@ -6,8 +6,7 @@ interface PeriodicTableProps {
   elements: ElementType[]; // Recebe os elementos via props
 }
 
-const PeriodicTable: React.FC<PeriodicTableProps> = ({ elements }) => {
-
+export default function PeriodicTable({ elements }: PeriodicTableProps) {
   // Cria a tabela dividida em parte superior (7x18) e parte inferior
   const { topTable, bottomTable } = createPeriodicTable(elements);
 
@@ -40,5 +39,3 @@ const PeriodicTable: React.FC<PeriodicTableProps> = ({ elements }) => {
     </div>
   );
 };
-
-export default PeriodicTable;
