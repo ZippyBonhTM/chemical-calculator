@@ -1,17 +1,9 @@
 import { RequestInit } from "next/dist/server/web/spec-extension/request";
-
-const ELEMENT_BASE_URL = process.env.ELEMENT_BASE_URL || "http://localhost:3000/api/v1/elements";
+const ELEMENT_BASE_URL = process.env.NEXT_PUBLIC_ELEMENT_BASE_URL!;
 
 async function fetchClient(url: string, options: RequestInit = {}) {
   try {
-    const response = await fetch(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        ...options.headers,
-      },
-      method: options.method || 'GET',
-      body: options.body ? JSON.stringify(options.body) : null,
-    });
+    const response = await fetch(url, options);
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -34,14 +26,16 @@ class ElementClient {
   }
 
   static async getElementByName(name: string) {
-    const response = await fetchClient(`${ElementClient}?name=${name}`, {
+    const response = await fetchClient(`${ELEMENT_BASE_URL}?name=${name}`, {
       method: "GET"
     });
     return response[0];
   }
 
   static async getElementBySymbol(symbol: string) {
-    const response = await fetchClient(`${ELEMENT_BASE_URL}?symbol=${symbol}`);
+    const response = await fetchClient(`${ELEMENT_BASE_URL}?symbol=${symbol}`, {
+      method: "GET"
+    });
     return response[0];
   }
 };

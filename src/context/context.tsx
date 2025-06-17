@@ -1,3 +1,4 @@
+'use client'
 import { ElementType } from "@/types/ElementAtributes";
 import { createContext, Dispatch, SetStateAction } from "react";
 
