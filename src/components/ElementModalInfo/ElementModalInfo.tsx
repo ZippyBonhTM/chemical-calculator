@@ -1,4 +1,4 @@
-import { ElementType } from "@/types/Element";
+import { ElementType } from "@/types/ElementAtributes";
 import RowInfo from "./RowInfo";
 
 interface ElementModalProps {

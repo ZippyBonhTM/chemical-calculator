@@ -1,8 +1,13 @@
-import { ElementType } from '../types/Element'; // Certifique-se de importar o tipo Element corretamente
+import { ElementType } from '../types/ElementAtributes'; // Certifique-se de importar o tipo Element corretamente
+
+export type PeriodicTableType = {
+  topTable: (ElementType | null)[][];
+  bottomTable: (ElementType | null)[];
+};
 
 // Função que organiza os elementos em uma tabela 7x18 (7 períodos, 18 grupos)
 // E separa os elementos que não cabem na tabela principal
-export const createPeriodicTable = (elements: ElementType[]): { topTable: (ElementType | null)[][], bottomTable: (ElementType | null)[] } => {
+export const createPeriodicTable = (elements: ElementType[]): PeriodicTableType => {
   // Inicializa a tabela principal (7x18) vazia com null
   const topTable: (ElementType | null)[][] = Array.from({ length: 7 }, () => Array(18).fill(null));
   // Tabela inferior para os elementos removidos da principal

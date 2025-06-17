@@ -1,11 +1,10 @@
-"use client"
-import mockElements from "@/assets/mockElements";
+'use client'
 import PeriodicTable from "@/shared/PeriodicTable";
 
 export default function Home() {
   return (
     <div>
-      <PeriodicTable elements={mockElements}/>
+      <PeriodicTable/>
     </div>
   );
 }
