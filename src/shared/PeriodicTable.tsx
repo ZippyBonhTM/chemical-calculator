@@ -1,12 +1,13 @@
-import { ElementType } from '../types/Element';
 import { createPeriodicTable } from './createPeriodicTable';
 import Element from './Element';
+import useElementContext from '@/hooks/useElementContext';
 
-interface PeriodicTableProps {
-  elements: ElementType[]; // Recebe os elementos via props
-}
+export default function PeriodicTable() {
+  const context = useElementContext();
+  if (!context || !context?.elements) return;
 
-export default function PeriodicTable({ elements }: PeriodicTableProps) {
+  const { elements } = context;
+
   // Cria a tabela dividida em parte superior (7x18) e parte inferior
   const { topTable, bottomTable } = createPeriodicTable(elements);
 
@@ -18,7 +19,7 @@ export default function PeriodicTable({ elements }: PeriodicTableProps) {
           <div key={rowIndex} className="table-row">
             {row.map((element, colIndex) => (
               <div key={colIndex} className='table-cell p-0.5'>
-                {element ? <Element key={colIndex} { ...element } /> : ''}
+                {element ? <Element key={colIndex} {...element} /> : ''}
               </div>
             ))}
           </div>

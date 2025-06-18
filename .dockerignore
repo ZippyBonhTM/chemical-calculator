@@ -1,0 +1,7 @@
+/src
+/node_modules
+/.vscode
+/.git
+.dockerignore
+.gitignore
+README.md
