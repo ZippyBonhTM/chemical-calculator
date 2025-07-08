@@ -32,7 +32,7 @@ export default function PeriodicTable() {
         <div className="elements-list">
           {bottomTable.map((element, index) => (
             <div key={index} className="element-item">
-              {element?.symbol.value} - {element?.name.value}
+              {element?.symbol} - {element?.name}
             </div>
           ))}
         </div>
