@@ -15,7 +15,7 @@ export const createPeriodicTable = (elements: ElementType[]): PeriodicTableType 
 
   // Preenche a tabela com os elementos conforme seu grupo e período
   elements.forEach(element => {
-    const { group, period } = element;
+    const { group, period } = element.position;
 
     // Verifica se o grupo e o período estão dentro dos limites da tabela principal (7x18)
     if (group >= 1 && group <= 18 && period >= 1 && period <= 7) {

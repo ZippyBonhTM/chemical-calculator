@@ -1,22 +1,32 @@
 // Padronização dos Elementos
 export type ElementType = {
-  name: ValueWithLink<string>; // Nome
-  symbol: ValueWithLink<string>; // Simbolo
+  name: string; // Nome
+  symbol: string; // Símbolo
   atomicNumber: ValueWithLink<number>; // Número Atômico
   atomicWeight: ValueWithLink<number>; // Peso Atômico
   category: ValueWithLink<ElementCategory>; // Categoria
-  stateAtRoomTemp: ValueWithLink<ElementState>; // Estado do elemento na temperatura ambiente
+  stateAtRoomTemp?: ValueWithLink<ElementState>; // Estado do elemento em temperatura ambiente
   meltingPoint?: ValueWithLink<number>; // Ponto de fusão do elemento
   boilingPoint?: ValueWithLink<number>; // Ponto de ebulição do elemento
-  electronConfiguration: ValueWithLink<ElectronConfiguration>; // Configuração Eletrônica do elemento
+  density?: ValueWithLink<number>; // Densidade do átomo
+  electronConfiguration: ValueWithLink<string>; // Configuração Eletrônica do elemento
+  electronegativity?: ValueWithLink<number>; // Eletronegatividade do elemento
+  atomicRadius?: ValueWithLink<number>; // Raio Atômico do elemento
+  ionizationEnergy?: ValueWithLink<number>; // Energia de Ionização do elemento
+  electronAffinity?: ValueWithLink<number>; // Afinidade Eletrônica do elemento
+  oxidationStates?: ValueWithLink<OxidationStatesType>; // Estados de oxidação
   description?: ValueWithLink<string>; // Descrição
   uses?: ValueWithLink<string>; // Usos do elemento
   history?: ValueWithLink<string>; // História
   interestingFacts?: ValueWithLink<string>; // Fatos interessantes sobre o elemento
   moreInfoLink?: string; // Página de mais informações sobre o elemento
-  group: number; // Grupo (colunas)
-  period: number; // Período (linhas)
+  position: {
+    group: number; // Grupo (colunas)
+    period: number; // Período (linhas)
+  };
 };
+
+export type OxidationStatesType = Array<number>;
 
 export type ReducedElementType = Pick<ElementType,
   "atomicNumber" |
@@ -43,12 +53,9 @@ export interface MapedElementType {
   interestingFacts?: string | null | undefined;
   moreInfoLink?: string | null | undefined;
   position: { group: number; period: number; };
-  block: 's' | 'p' | 'd' | 'f';
 }
 
 export type Position = { group: number, period: number; };
-
-export type ElectronConfiguration = string | Array<{ subshell: string; electrons: number; }>;
 
 export type ValueWithLink<T> = { value: T, link: string; };
 
