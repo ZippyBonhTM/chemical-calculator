@@ -11,7 +11,7 @@
   "dependencies": {
     "@next/env": "^15.3.4",
     "@tailwindcss/postcss": "^4.1.11",
-    "next": "^15.3.5",
+    "next": "^15.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
