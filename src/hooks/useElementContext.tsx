@@ -1,8 +1,8 @@
-import ElementContext from "@/context/context";
+import context from "@/context";
 import { useContext } from "react";
 
 const useElementContext = () => {
-  return useContext(ElementContext);
+  return useContext(context.element);
 };
 
 export default useElementContext;

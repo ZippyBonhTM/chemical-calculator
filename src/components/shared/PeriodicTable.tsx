@@ -4,9 +4,22 @@ import useElementContext from '@/hooks/useElementContext';
 
 export default function PeriodicTable() {
   const context = useElementContext();
-  if (!context || !context?.elements) return;
 
-  const { elements } = context;
+  if (!context) return (
+    <div>
+      <p>Parece que o client está quebrado...</p>
+    </div>
+  )
+  if (!context.elements) return (
+    context.loadElements()
+  )
+  if (!context.elements) return (
+    <div>
+      <p>Parece que o servidor não está enviando os dados...</p>
+    </div>
+  )
+
+  const elements = context?.elements;
 
   // Cria a tabela dividida em parte superior (7x18) e parte inferior
   const { topTable, bottomTable } = createPeriodicTable(elements);

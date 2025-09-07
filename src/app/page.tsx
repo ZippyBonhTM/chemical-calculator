@@ -1,9 +1,11 @@
 'use client'
-import PeriodicTable from "@/shared/PeriodicTable";
+import NavBar from "@/components/layout/NavBar";
+import PeriodicTable from "@/components/shared/PeriodicTable";
 
 export default function Home() {
   return (
     <div>
+      <NavBar/>
       <PeriodicTable/>
     </div>
   );
