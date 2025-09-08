@@ -16,7 +16,7 @@ export default function UserButton() {
 
   if (!context?.user) {
     return (
-      <button onClick={loginButtonHandler} className="flex justify-center text-black items-center rounded-full bg-neutral-400 p-1 h-10">
+      <button onClick={loginButtonHandler} className="flex justify-center text-black items-center rounded-2xl bg-neutral-200 p-1 h-full">
         Login
       </button>
     )
@@ -24,7 +24,7 @@ export default function UserButton() {
   
   return (
     <>
-      <button onClick={userButtonHandler} className="flex justify-center items-center rounded-full bg-neutral-600 p-1 w-10 h-10">
+      <button onClick={userButtonHandler} className="flex justify-center items-center rounded-2xl bg-neutral-600 p-1 w-10 h-10">
         User
       </button>
       {isOpen ? <UserPannel /> : null}

@@ -1,4 +1,4 @@
-import { ElementType } from '../types/ElementAtributes'; // Certifique-se de importar o tipo Element corretamente
+import { ElementType } from '@/types/ElementAtributes'; // Certifique-se de importar o tipo Element corretamente
 
 export type PeriodicTableType = {
   topTable: (ElementType | null)[][];
@@ -11,7 +11,7 @@ export const createPeriodicTable = (elements: ElementType[]): PeriodicTableType 
   // Inicializa a tabela principal (7x18) vazia com null
   const topTable: (ElementType | null)[][] = Array.from({ length: 7 }, () => Array(18).fill(null));
   // Tabela inferior para os elementos removidos da principal
-  const bottomTable: (ElementType | null)[] = [];
+  const bottomTable: (ElementType | null)[] = Array(30).fill(null);
 
   // Preenche a tabela com os elementos conforme seu grupo e período
   elements.forEach(element => {

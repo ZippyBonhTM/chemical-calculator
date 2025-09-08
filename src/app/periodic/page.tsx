@@ -1,10 +1,9 @@
-'use client';
 import PeriodicTable from "@/components/shared/PeriodicTable";
 
-export default function Home() {
+export default function Periodic() {
   return (
-    <div>
+    <>
       <PeriodicTable />
-    </div>
-  );
+    </>
+  )
 }
