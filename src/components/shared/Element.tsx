@@ -1,6 +1,6 @@
 "use client";
 
-import ElementModalInfo from "@/components/ElementModalInfo";
+import ElementModalInfo from "@/components/shared/ElementModalInfo";
 import Modal from "@/components/Modal";
 import { ElementCategoryInfo, ElementType } from "@/types/ElementAtributes";
 import convertPaulingToArray from "@/utils/convertPaulingToDistribuition";

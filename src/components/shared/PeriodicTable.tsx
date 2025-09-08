@@ -27,9 +27,9 @@ export default function PeriodicTable(): JSX.Element {
   const { topTable, bottomTable } = createPeriodicTable(elements);
 
   return (
-    <div className="periodic-table border border-neutral-600 bg-transparent h-min w-min">
+    <div className="periodic-table p-2 mx-auto border-2 border-purple-600 bg-transparent h-min w-min">
       {/* Renderiza a parte superior da tabela */}
-      <div className="top-table border-neutral-600 m-2">
+      <div className="top-table border-neutral-600">
         {topTable.map((row, rowIndex) => (
           <div key={rowIndex} className="flex">
             {row.map((element, colIndex) => (

@@ -1,10 +1,7 @@
-'use client';
-import PeriodicTable from "@/components/shared/PeriodicTable";
-
 export default function Home() {
   return (
-    <div>
-      <PeriodicTable />
-    </div>
+    <p className="flex fixed items-center justify-center h-screen w-screen">
+      Welcome to the Chemical Calculator!
+    </p>
   );
 }

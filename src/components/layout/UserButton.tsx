@@ -16,7 +16,7 @@ export default function UserButton() {
 
   if (!context?.user) {
     return (
-      <button onClick={loginButtonHandler} className="flex justify-center text-black items-center rounded-2xl bg-neutral-200 p-1 h-full">
+      <button onClick={loginButtonHandler} className="flex justify-center items-center text-black rounded-2xl bg-neutral-200 p-1 h-full">
         Login
       </button>
     )

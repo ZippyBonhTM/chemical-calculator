@@ -11,8 +11,8 @@ export default function NavBar() {
   };
 
   return (
-    <div className="flex flex-col mb-2 mx-auto w-[50%] p-1.5 bg-neutral-900 border-x border-b rounded-b-xl border-neutral-600">
-      <p className="text-center truncate whitespace-nowrap overflow-hidden uppercase font-bold">{PageName}</p>
+    <div className="flex flex-col mb-2 mx-auto w-[50%] px-2 pb-2 pt-0.5 gap-0.5 bg-neutral-900 border-x border-b rounded-b-xl border-neutral-600 z-500">
+      <p className="flex justify-center items-center truncate whitespace-nowrap h-4 overflow-hidden uppercase text-sm">{PageName}</p>
       <div className="flex justify-between w-full">
         <section>
           <button onClick={homeHandler} className="bg-neutral-200 border p-1.5 rounded-2xl text-black">Home</button>
