@@ -12,7 +12,7 @@
     "@next/env": "^15.5.2",
     "@tailwindcss/postcss": "^4.1.11",
     "next": "^15.5.2",
-    "react": "^19.0.0",
+    "react": "^19.1.1",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
