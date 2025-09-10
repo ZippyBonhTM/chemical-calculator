@@ -6,6 +6,6 @@ const DefaultForm = {
   Form: Form,
   Input: Input,
   Button: Button
-}
+};
 
 export default DefaultForm;

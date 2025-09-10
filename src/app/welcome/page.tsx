@@ -1,7 +1,6 @@
-import LoginForm from "@/components/auth/LoginForm";
+import LoginForm from "@/components/auth/Login/LoginForm";
 
 export default function Page() {
-
 
   return (
     <div>
