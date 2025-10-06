@@ -11,7 +11,7 @@ export default function UserButton() {
   };
 
   const loginButtonHandler = () => {
-    redirect("/welcome", RedirectType.push)
+    redirect("/welcome", RedirectType.push);
   }
 
   if (!context?.user) {
