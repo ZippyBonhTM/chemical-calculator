@@ -1,3 +1,4 @@
+'use client'
 import PeriodicTable from "@/components/shared/PeriodicTable";
 
 export default function Periodic() {
