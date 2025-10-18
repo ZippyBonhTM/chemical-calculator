@@ -9,11 +9,11 @@ interface ModalPorps {
 export default function Modal({ isOpen, onClose, children }: ModalPorps) {
   if (!isOpen) return null;
   return (
-    <div onClick={onClose} className="flex absolute items-center justify-center min-w-[30rem] bg-white bg-opacity-50">
-      <div className="flex flex-col bg-n p-6 rounded-lg relative max-w-[60rem]">
-        <button className="absolute top-2 right-2 text-xl font-bold" onClick={onClose}>
-          ✖
-        </button>
+    <div className="flex flex-col items-end-safe px-2 pb-2 absolute bg-neutral-800 rounded-xl shadow-neutral-600 shadow-lg bg-opacity-50 z-10">
+      <button className="mt-0.5 text-2xl" onClick={onClose}>
+        ✖
+      </button>
+      <div className="flex flex-col bg-n rounded-lg relative max-w-[60rem]">
         {children}
       </div>
     </div>
